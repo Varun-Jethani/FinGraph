@@ -39,4 +39,3 @@ def generate_graph(ticker):
 
 
 
-generate_graph("GOOGL")
