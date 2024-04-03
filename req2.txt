@@ -48,7 +48,7 @@ pytz==2024.1
 requests==2.31.0
 six==1.16.0
 soupsieve==2.5
-sqlparse==0.4.4
+sqlparse==0.2.4
 tenacity==8.2.3
 toml==0.10.2
 typing_extensions==4.10.0
