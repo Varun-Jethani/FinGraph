@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fingraph</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <title> {% block title %} {% endblock title %} </title>
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <img src="{% static '9634.jpg' %}" alt="why Django" class="logo">
+                <ul>
+                    <li><a href=".."><img class="logo1" src="{% static 'warehouse.png' %}"></a></li>
+                    <li><a href="contact"><img class="logo1"  src="{% static 'customer-service.png' %}"></a></li>
+                    <li><a href="about"><img class="logo1" src="{% static 'info.png' %}"></a></li>
+                    <li><a href="services"><img class="logo1" src="{% static 'gear.png' %}"></a></li>
+                </ul>
+            </div>
+        </header>
+
+                {% block bod1 %}
+                {% endblock bod1 %}
+    </body>
+</html>

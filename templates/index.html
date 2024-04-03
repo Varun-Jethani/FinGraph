@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock title %}
+
+{% block bod1 %}
+
+<div class="banner">
+    <div class="content">
+        <h1 class="headin">Fingraph</h1><br>
+        <p> </p>
+        <form name="form" onsubmit="return isEmpty()" method="post" action='/content' accept-charset="utf-8" required>
+            {% csrf_token %}
+            <p>Enter the stock code</p>
+            <label for="stock"></label>
+            <input id="stock" type="text" name="stock" value="{{ current_name }}"><br>
+            <input  class="button" type="submit" value="Submit">
+            {% comment %} <script src="redirect.js"></script> {% endcomment %}
+        </form>
+    </div>
+</div>
+{%endblock bod1 %}
