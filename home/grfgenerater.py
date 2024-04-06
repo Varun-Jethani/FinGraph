@@ -2,9 +2,7 @@
 import plotly.graph_objects as go
 import yfinance as yf
 import datetime
-import memory_profiler
 
-@memory_profiler.profile
 def generate_graph(ticker):
     
     start_date = "2024-01-01"
@@ -37,4 +35,3 @@ def generate_graph(ticker):
 
 
 
-print(generate_graph("AAPL"))
