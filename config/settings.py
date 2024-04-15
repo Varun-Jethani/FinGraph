@@ -11,11 +11,13 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-password = "XWor1x9iK6i3WnWF"
 
 
 # Quick-start development settings - unsuitable for production
@@ -79,12 +81,16 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'User',
-        'ENFORCE_SCHEMA': False,
-        'CLIENT': {
-            'host': f'mongodb+srv://varunjethani2444:{password}@cluster0.84gfnhy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
-        
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'defaultdb',
+        'USER':'avnadmin',
+        'PASSWORD':os.getenv("DB_PASSWORD"),
+        "HOST":"mysql-237e0385-varunjethaniproj1.b.aivencloud.com",
+        "PORT":"28276",
+        'OPTIONS': {
+            'ssl': {
+                'ca': 'config/ca.pem',  # path to CA certificate
+            }
         }
     }
 }
@@ -131,7 +137,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-import os
+
 #manual
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
